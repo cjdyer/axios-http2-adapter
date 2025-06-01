@@ -2,8 +2,7 @@
   "name": "axios-http2-adapter",
   "version": "1.0.3",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
   "type": "module",
   "license": "MIT",
   "keywords": [],
@@ -41,6 +40,19 @@
   },
   "peerDependencies": {
     "axios": "^1.9"
+  },
+  "exports": {
+    ".": {
+      "browser": {
+        "require": "./dist/browser/axios-http2-adapter.cjs",
+        "default": "./index.js"
+      },
+      "default": {
+        "require": "./dist/node/axios-http2-adapter.cjs",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": "./package.json"
   },
   "commitlint": {
     "rules": {
