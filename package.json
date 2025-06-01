@@ -14,9 +14,7 @@
     "build:js": "gulp clear && cross-env NODE_ENV=production rollup -c -m",
     "fix": "eslint --fix lib/**/*.js",
     "prepare": "husky install && npm run prepare:hooks",
-    "prepare:hooks": "npx husky set .husky/commit-msg \"npx commitlint --edit $1\"",
-    "release:commit": "./release-commit.sh",
-    "release:publish": "./release-publish.sh"
+    "prepare:hooks": "npx husky set .husky/commit-msg \"npx commitlint --edit $1\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.27.2",
