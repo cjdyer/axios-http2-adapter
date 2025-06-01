@@ -11,7 +11,7 @@ const lib = require("./package.json");
 const outputFileName = "http2-adapter";
 const name = "Http2Adapter";
 const namedInput = "./index.js";
-const defaultInput = "./lib/index.js";
+const defaultInput = "./lib/adapter.js";
 
 const buildConfig = ({
     es5,
