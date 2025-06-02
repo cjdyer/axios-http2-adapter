@@ -1,0 +1,6 @@
+ts/index.js
+ts-require/index.js
+ts-require-default/index.js
+typings/cjs/index.js
+typings/esm/index.js
+**/node_modules
