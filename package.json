@@ -19,6 +19,7 @@
     "prepare:hooks": "npx husky set .husky/commit-msg \"npx commitlint --edit $1\""
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@commitlint/config-conventional": "^19.8.1",
     "@rollup/plugin-babel": "^5.3.1",
