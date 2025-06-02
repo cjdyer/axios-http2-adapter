@@ -19,12 +19,12 @@
     "prepare:hooks": "npx husky set .husky/commit-msg \"npx commitlint --edit $1\""
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-env": "^7.23.9",
     "@commitlint/config-conventional": "^19.8.1",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "cross-env": "^7.0.3",
     "eslint": "~8.56",
     "express": "~4.21",
