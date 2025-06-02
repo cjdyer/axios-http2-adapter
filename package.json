@@ -26,6 +26,7 @@
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "axios": "^1.9",
     "cross-env": "^7.0.3",
     "eslint": "~8.56",
     "express": "~4.21",
