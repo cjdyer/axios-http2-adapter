@@ -1,7 +1,7 @@
 {
-  "name": "axios-http2-adapter",
-  "version": "1.0.3",
-  "description": "",
+  "name": "axios-h2-adapter",
+  "version": "1.0.4",
+  "description": "An Axios adapter that enables HTTP/2 requests with automatic fallback to HTTP/1.1. Seamlessly integrates with existing Axios instances for improved performance and modern protocol support.",
   "main": "index.js",
   "type": "module",
   "license": "MIT",
@@ -42,20 +42,24 @@
     "tsd": "^0.21.0"
   },
   "dependencies": {
-    "follow-redirects": "~1.15",
-    "http2-wrapper": "~2.2"
+    "follow-redirects": "~1.15"
   },
   "peerDependencies": {
     "axios": "^1.9"
   },
+  "files": [
+    "dist/",
+    "index.js",
+    "index.d.ts"
+  ],
   "exports": {
     ".": {
       "browser": {
-        "require": "./dist/browser/axios-http2-adapter.cjs",
+        "require": "./dist/browser/axios-h2-adapter.cjs",
         "default": "./index.js"
       },
       "default": {
-        "require": "./dist/node/axios-http2-adapter.cjs",
+        "require": "./dist/node/axios-h2-adapter.cjs",
         "default": "./index.js"
       }
     },

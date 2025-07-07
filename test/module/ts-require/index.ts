@@ -1,7 +1,4 @@
-const createHTTP2Adapter = require("axios-http2-adapter");
+const http2Adapter = require("axios-h2-adapter");
 const assert = require("assert");
 
-assert.strictEqual(typeof createHTTP2Adapter, "function");
-
-const adapter = createHTTP2Adapter();
-assert.strictEqual(typeof adapter, "function");
+assert.strictEqual(typeof http2Adapter, "function");

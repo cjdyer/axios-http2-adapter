@@ -3,13 +3,14 @@ module.exports = {
         browser: true,
         es2018: true,
         node: true,
+        mocha: true,
     },
-    extends: 'eslint:recommended',
+    extends: "eslint:recommended",
     parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
+        ecmaVersion: "latest",
+        sourceType: "module",
     },
     rules: {
-        'no-cond-assign': 0,
+        "no-cond-assign": 0,
     },
 };
