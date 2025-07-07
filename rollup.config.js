@@ -8,10 +8,10 @@ import bundleSize from "rollup-plugin-bundle-size";
 import path from "path";
 
 const lib = require("./package.json");
-const outputFileName = "axios-http2-adapter";
-const name = "axios-http2-adapter";
+const outputFileName = "axios-h2-adapter";
+const name = "axios-h2-adapter";
 const namedInput = "./index.js";
-const defaultInput = "./lib/adapter.js";
+const defaultInput = "./lib/http2-adapter.js";
 
 const buildConfig = ({
     es5,

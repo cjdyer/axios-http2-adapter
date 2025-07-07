@@ -1,41 +1,55 @@
 # axios-http2-adapter
-`axios-http2-adapter` is a custom adapter designed to fill a gap in the current Axios ecosystem. Despite widespread demand, as evidenced by [axios issue #1175](https://github.com/axios/axios/issues/1175), Axios has yet to implement native HTTP/2 support. This library offers a seamless solution, integrating HTTP/2 capabilities into Axios via `http2-wrapper`.
 
-## Installation
+An HTTP/2-capable adapter for [Axios](https://github.com/axios/axios), providing automatic fallback
+to HTTP/1.1 when HTTP/2 is unsupported or unavailable.
+
+## ✨ Features
+
+- Uses the HTTP/2 protocol for supported HTTPS endpoints
+- Automatically falls back to HTTP/1.1 (over HTTPS or HTTP) when needed
+- Seamlessly integrates with existing `axios` instances
+- Compatible with both browser-like and Node.js environments
+
+## 📦 Installation
 
 ```bash
-npm install axios-http2-adapter
+npm install axios-h2-adapter
 ```
 
-## Usage
+## 🚀 Usage
+```js
+import axios from "axios";
+import adapter from "axios-h2-adapter";
 
-### Basic usage:
+const axiosInstance = axios.create({
+  adapter,
+});
 
-```javascript
-const axios = require('axios');
-const { createHTTP2Adapter } = require('axios-http2-adapter');
-
-axios.defaults.adapter = createHTTP2Adapter();
+const res = await axiosInstance.get("https://example.com");
+console.log(res.status); // 200
 ```
 
-### Configuration:
+You can also pass adapter inline:
 
-```javascript
-const axios = require('axios');
-const { createHTTP2Adapter } = require('axios-http2-adapter');
-const http2 = require('http2-wrapper');
-
-const adapterConfig = {
-  agent: new http2.Agent({ /* options */ }),
-  force: true // Force HTTP/2 without ALPN check - adapter will not check whether the endpoint supports http2 before the request
-};
-
-axios.defaults.adapter = createHTTP2Adapter(adapterConfig);
+```js
+const res = await axios.get("https://example.com", {
+  adapter,
+});
 ```
 
-## License
-This project is licensed under the [MIT License](https://github.com/uibakery/axios-http2-adapter/blob/master/LICENSE).
+## 🔍 Fallback Behavior
 
-## Acknowledgements
-[axios](https://github.com/axios/axios)
-[http2-wrapper](https://github.com/szmarczak/http2-wrapper)
+If the server supports HTTP/2, requests will use it automatically.
+
+If HTTP/2 is not supported, it will gracefully fall back to HTTP/1.1.
+
+Works for both HTTPS and HTTP requests (though HTTP/2 only applies to HTTPS).
+
+## ✅ Tests
+
+To run tests:
+
+```bash
+npm install
+npm test
+```

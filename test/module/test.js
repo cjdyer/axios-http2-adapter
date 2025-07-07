@@ -1,5 +1,5 @@
 import assert from "assert";
-import createHTTP2Adapter from "../../index.js";
+import http2Adapter from "../../index.js";
 import { fileURLToPath } from "url";
 import path from "path";
 import util from "util";
@@ -41,12 +41,7 @@ describe("module", function () {
 
     describe("export", function () {
         it("should export a function", function () {
-            assert.strictEqual(typeof createHTTP2Adapter, "function");
-        });
-
-        it("should return a function when called", function () {
-            const adapter = createHTTP2Adapter();
-            assert.strictEqual(typeof adapter, "function");
+            assert.strictEqual(typeof http2Adapter, "function");
         });
 
         describe("CommonJS", () => {
@@ -91,7 +86,7 @@ describe("module", function () {
             });
         });
 
-        describe("TS require('axios-http2-adapter')", () => {
+        describe("TS require('axios-h2-adapter')", () => {
             const pkgPath = path.join(__dirname, "./ts-require");
 
             after(async () => {

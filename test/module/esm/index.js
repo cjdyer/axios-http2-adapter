@@ -1,9 +1,6 @@
 import assert from "assert";
-import createHTTP2Adapter from "axios-http2-adapter";
+import http2Adapter from "axios-h2-adapter";
 
-assert.strictEqual(typeof createHTTP2Adapter, "function");
-
-const adapter = createHTTP2Adapter();
-assert.strictEqual(typeof adapter, "function");
+assert.strictEqual(typeof http2Adapter, "function");
 
 console.log("ESM importing test passed");
